@@ -1,0 +1,110 @@
+
+
+
+body, p {
+    background-color:#A9EABE;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    margin: 20px;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+#mainhead {
+    font-family: "Arial", sans-serif;
+    position: relative;
+    top: 10px;
+
+}
+
+.ratingbutton {
+    border: 1px solid;
+    border-radius: 0.25rem;
+    border-color: DarkGrey;
+    background-color: #f0f0f0;
+    position: relative;
+    bottom: 9px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.responseAlert {
+    position: relative;
+    transform: translate(-50%, 0%);
+    bottom: 0px;
+    width: 300px;
+    left: 50%;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 70px;
+    text-align: left;
+}
+
+.homepage-navbar {
+    background-color: #8FE0A9;
+    color: black;
+    width: 99%;
+    border-color: black;
+    border-width: 1px;
+}
+
+.nav-image {
+    width: 100px;
+    border-radius: 0.25rem;
+    margin: 6px;
+}
+
+.responselink {
+    color:#155724;
+    text-decoration: none;
+}
+
+.responselink:hover {
+    color:#155724;
+
+}
+
+.nav-item {
+    font-size: 20px;
+
+}
+
+.promo-image {
+    width: calc(100% - 10px);
+    border: 1px solid;
+    border-color: DarkGrey;
+    border-radius: 1rem;
+    margin: 5px;
+}
+
+.card {
+    width:80%;
+    border-radius: 1rem;
+    transform: translate(10%, 0%);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card-text {
+    background-color: white;
+}
+
+.btn-primary {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid;
+    border-color: DarkGrey;
+    border-radius: 0.5rem;
+}
