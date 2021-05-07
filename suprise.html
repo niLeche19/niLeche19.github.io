@@ -16,6 +16,71 @@
         <!-- main scripts -->
         <script>
 
+            // I realize there is a math.dist function. But i already wrote this when i figured that out...
+            // If you're wondering, this function takes the coordinates of two things and returns the distance between them in pixels.
+            let distanceTo = function(x1, y1, x2, y2) {
+                let xdist = x2 - x1;
+                let ydist = y2 - y1;
+
+                let dist = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
+
+                return (dist);
+            };
+
+            document.addEventListener("DOMContentLoaded", function() {
+                // This is the party parrot
+                let party=document.querySelector(".partydude");
+
+                // This is everything. This is used for mouse move events
+                let back=document.querySelector("html");
+
+                // X and Y velocity and direction for Mr. Parrot
+                let xVel = 0, yVel = 0;
+                let xDir = 0, yDir = 0;
+
+                // This stuff happens every time your mouse moves
+                back.addEventListener("mousemove", function(event) {
+                    // This gets mouse coordinates as well as bird coordinates
+                    let mouseX = event.clientX, mouseY = event.clientY, birdX = party.x, birdY = party.y;
+
+                    // This will change the direction and velocity of the bird if you get too close with your mouse
+                    if (distanceTo(mouseX, mouseY, birdX, birdY) < window.innerWidth/5) {
+                        // These decide whether to move up or down, left/right
+                        if (birdX > mouseX) {
+                            xDir = 1;
+                        } else {
+                            xDir = -1;
+                        }
+                        if (birdY > mouseY) {
+                            yDir = 1;
+                        } else {
+                            yDir = -1;
+                        }
+
+                        // This updates the directional velocity of Mr. Parrot
+                        xVel = (5 - (Math.abs(birdX - mouseX) / 100)) * xDir;
+                        yVel = (5 - (Math.abs(birdY - mouseY) / 100)) * yDir;
+                    }
+
+                    // This loops when the mouse moves even if the mouse isnt withen 500px of the bird
+                    // This updates the position of the bird with the velocities
+                    party.style.left = (birdX + xVel) + "px";
+                    party.style.top = (birdY - 65 + yVel) + "px";
+
+                    // These next two keep the bird on the screen
+                    if (birdX > window.innerWidth) {
+                        party.style.left = 0 + "px";
+                    } else if (birdX < 0) {
+                        party.style.left = window.innerWidth - 60 + "px";
+                    }
+
+                    if (birdY + 80 > window.innerHeight) {
+                        party.style.top = 0 + "px";
+                    } else if (birdY - 65 < 0) {
+                        party.style.top = window.innerHeight - 145 + "px";
+                    }
+                });
+            });
         </script>
     </head>
 
@@ -27,10 +92,15 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="homepage-navbar container-fluid">
-                <img src="cs50.png" alt="cs50 logo" class="nav-image">
-
-                <span class="navbar-brand"> Homepage</span>
-
+                <div class="row">
+                    <div class="col-4">
+                        <img src="cs50.png" alt="cs50 logo" class="nav-image">
+                    </div>
+                    <div class="col-4">
+                        <span class="navbar-brand col-2"> Homepage</span>
+                    </div>
+                </div>
+                <!-- This is the navbar links. Currently not used just to increase the challenge
                 <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active home-button" aria-current="page" href="index.html">Home</a>
@@ -45,11 +115,24 @@
                         <a class="nav-link active page-one-button" aria-current="page" href="promotionals.html">Promotionals</a>
                     </li>
                 </ul>
+                -->
             </div>
         </nav>
 
-        <img src="images/partytime.gif" alt="Party parrot gif">
 
+
+        <div class="partyparrot">
+            <a href="index.html">
+                <img src="images/partytime.gif" alt="Party parrot gif" class="partydude">
+            </a>
+        </div>
+        <div class="supriseintro" style="text-align: center; vertical-align: top;">
+            <h3>You let the Party Parrot escape! Now you have to catch him!</h3>
+            <h4>He only moves when your mouse moves, but get too close and he'll book it in the other direction.<br>
+            The closer you get, the faster he runs!<br>
+            All you have to do is click him and he'll send you back to the homepage.</h4>
+        </div>
+        <p id="mousetext" style="position: relative; top: 200px"></p>
     </body>
 
 </html>
