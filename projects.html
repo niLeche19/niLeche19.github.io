@@ -15,7 +15,17 @@
         <title>Nick's Homepage</title>
         <!-- main scripts -->
         <script>
-
+        /*
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector("#topbutton").addEventListener("click", function() {
+                    console.log(document.documentElement.scrollTop);
+                    while (document.documentElement.scrollTop >= 0) {
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop -= 1;
+                    }
+                });
+            });
+            */
         </script>
     </head>
 
@@ -28,6 +38,10 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="homepage-navbar container-fluid">
 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
                 <div class="row">
                     <div class="col-4">
                         <img src="cs50.png" alt="cs50 logo" class="nav-image">
@@ -37,27 +51,97 @@
                     </div>
                 </div>
 
-                <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active home-button" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active hpage-two-button" aria-current="page" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active page-one-button" aria-current="page" href="promotionals.html">Promotionals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active page-three-button" aria-current="page" href="suprise.html">Suprise&#129320;</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active home-button" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active hpage-two-button" aria-current="page" href="#">Independent Study</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active page-one-button" aria-current="page" href="promotionals.html">Promotionals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active page-three-button" aria-current="page" href="suprise.html">Suprise&#129320;</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
+        <div class="contents">
+            <div class="introduction content">
+                <h1 class="chead">Introduction</h1>
+                <p class="ctext">
+                For my freshman year independent study project, I decided to design a 4x3 key macro key keyboard,
+                which would be able to execute simple tasks on my computer such as turn my volume up or down, or mute/unmute my microphone.
+                </p>
+            </div>
+            <div class="inspiration content">
+                <h1 class="chead">Inspiration</h1>
+                <p class="ctext">
+                    I got the idea for a macro keyboard from a product made by Elgato called the Stream Deck.
+                </p>
 
-        <div class="introduction">
-            <h3>Here are a couple of the projects I've worked on over the past few years.<br>These are the only two I have good documentation for so they get the spotlight, but rest assured there are many others.</h3>
+                <p class="ctext">
+                    The Stream Deck features multiple buttons that you are able to program through software to execute simple tasks.
+                    It is called the Stream Deck because it is a popular choice among streamers for controlling features and aspects of their streams.
+                </p>
+                <img src="images/macro/sdeck.jpg" alt="stream deck" class="cimage">
+
+                <p class="ctext">
+                    For the design of my keyboard I wanted something a little more simplistic than the Stream Deck.
+                    I had seen other homemade macro keyboards that featured less keys and a more minimalistic design,
+                    and I based my design largely off of those.
+                </p>
+                <img src="images/macro/maccc.jpg" alt="DIY macro keyboard" class="cimage">
+            </div>
+            <div class="circuit-design content">
+                <h1 class="chead">Circuit Design</h1>
+                <p class="ctext">
+                    I planned to create a custom <a href="https://en.wikipedia.org/wiki/Printed_circuit_board" class="link-secondary" target="_blank">PCB</a> for my keyboard,
+                    so the next step in my project was to design the PCB.
+                </p>
+                <p class="ctext">
+                    I decided to use the Atmel atmega32u4 to power my keyboard, as it is relatively cheap, but mainly because it has a large amount of community support around it.
+                    The 32u4 can be found in a couple models of Arduino, so there is no shortage of information about it online.
+                </p>
+                <img src="images/macro/IMG_20200419_175216.jpg" alt="32u4 chip" class="cimage" style="width: 40%">
+                <p class="ctext">
+                    To design my circuit, I used the EasyEDA online circuit designer. This website has a large database of electrical component models and layouts, which makes the design process much faster.
+                    EasyEDA is also associated with the PCB printing service JLpcb, so I was able to export my designs directly from EasyEDA to JLpcb to get them produced.
+                </p>
+                <img src="images/macro/pcb.png" alt="PCB design" class="cimage" style="width: 40%">
+            </div>
+            <div class="build-time content">
+                <h1 class="chead">Circuit Population</h1>
+                <p class="ctext">
+                    Once my PCBs had finished their journey across the world (from China), it came time to assemble them and solder everything together.
+                </p>
+                <img src="images/macro/pcbreal.jpg" alt="physical PCB" class="cimage">
+                <p class="ctext">
+                    After soldering everything on, the keyboard was physically complete, and only needed software to function.
+                </p>
+                <img src="images/macro/populated.jpg" alt="populated circuit baord" class="cimage">
+                <p class="ctext">
+                    To give you a sense of scale, the body of the 32u4 chip only measures 0.4 inches, and the entire keyboard clocks in just under 3.5 inches. This thing is pretty small.
+                </p>
+            </div>
+            <div class="software content">
+                <h1 class="chead">Software and Functionality</h1>
+                <p class="ctext">
+                    As I mentioned above, the 32u4 chip can be found on some Arduinos, so I was able to use the Arduino
+                    <a href="https://en.wikipedia.org/wiki/Integrated_development_environment" class="link-secondary">IDE</a>
+                    to develope the software for this keyboard.
+                </p>
+                <p class="ctext">
+                    Because screenshots of Arduino code are incredibly displeasing to the eye, I have excluded them from this webpage,
+                    but the keyboard has all the functionality that I hoped it would, plus some other cool features like USB-C output, key bounce prevention, and
+                    <a href="https://www.digitalcitizen.life/what-is-nkro-6kro-keyboards/" class="link-secondary">NKRO.</a>
+                </p>
+                <img src="images/macro/keyboard.jpg" alt="finished macro keyboard" class="cimage">
+            </div>
+            <button class="ratingbutton" id="topbutton"><a href="#top" class="link-secondary">back to top</a></button>
         </div>
-
     </body>
-
 </html>
