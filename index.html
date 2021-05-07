@@ -39,43 +39,70 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="homepage-navbar container-fluid">
-                <img src="cs50.png" alt="cs50 logo" class="nav-image">
 
-                <span class="navbar-brand"> Homepage</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active home-button" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active hpage-two-button" aria-current="page" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active page-three-button" aria-current="page" href="suprise.html">Suprise&#129320;</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active page-one-button" aria-current="page" href="promotionals.html">Promotionals</a>
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="cs50.png" alt="cs50 logo" class="nav-image">
+                    </div>
+                    <div class="col-4">
+                        <span class="navbar-brand col-2">Homepage</span>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active home-button" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active hpage-two-button" aria-current="page" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active page-one-button" aria-current="page" href="promotionals.html">Promotionals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active page-three-button" aria-current="page" href="suprise.html">Suprise&#129320;</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
-        <div class="mainHeader">
-            <h1 id="mainhead">Hello and welcome to my homepage!</h1>
+        <div id="mainhead">
+            <p class="mainheader" style="display: inline;">Hello, my name is Nick...<br>and welcome to my homepage!</p>
+        </div>
+        <div id="mainpara">
+            <p>This website was created as my submission for the Homepage Problem, which is a part of Harvard's CS50 course.
+            If you would like more information about the problem, take a look <a href="https://cs50.harvard.edu/x/2021/psets/8/homepage" target="_blank">here,</a>
+            or if you want to learn more about the CS50 courses Harvard offers, take a look <a href="https://www.edx.org/cs50#:~:text=Introduction%20to%20Computer%20Science%20from,for%20the%20course%20on%20edX." target="_blank">here.</a>
+            </p>
+            <p>
+            Otherwise, feel free to take a look around!<br><br>
+            "Home" is where you are now, most of the time you can click that to return here.<br>
+            "Projects" shows a few of the projects I have work on.<br>
+            "Promotionals" has links to my socials. <br>
+            And "Suprise" has a suprise!
+            <p/>
+            <p><br>
+            By the way, there is a fifth page hidden somewhere around here... See if you can find it.
+            </p>
         </div>
 
-        <footer>
-            <div class="ratings">
+        <div class="alert responseAlert alert-success collapse" role="alert">
+            Thank you for your <a href="easteregg.html" class="responselink">response</a>!
 
-                <div class="alert responseAlert alert-success collapse" role="alert">
-                    Thank you for your <a href="easteregg.html" class="responselink">response</a>!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="&times;">
+            </button>
+        </div>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="&times;">
-                    </button>
-                </div>
 
-                <p>How would you rate your experience on my website today?</p>
-
+        <div class="ratings">
+            <p>How would you rate your experience on my website today?</p>
+            <div class="ratebuttons">
                 <button class="ratingbutton" id='b1'>1</button>
                 <button class="ratingbutton" id='b2'>2</button>
                 <button class="ratingbutton" id='b3'>3</button>
@@ -88,7 +115,7 @@
                 <button class="ratingbutton" id='b10'>10</button>
             </div>
 
-        </footer>
+        </div>
     </body>
 
 </html>
