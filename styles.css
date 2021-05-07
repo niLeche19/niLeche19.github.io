@@ -1,13 +1,8 @@
 
-
-
-body, p {
+body{
     background-color:#A9EABE;
 }
 
-h1 {
-    text-align: center;
-}
 
 h3 {
     margin: 20px;
@@ -21,10 +16,33 @@ footer {
 }
 
 #mainhead {
+    background-color: white;
+    border-radius: 1rem;
     font-family: "Arial", sans-serif;
+    font-size: 5vmin;
+    text-align: center;
+    width: 50%;
     position: relative;
-    top: 10px;
+    left: 25%;
+    margin-top: 20px;
 
+}
+
+#mainpara {
+    background-color: white;
+    width: 75%;
+    position: relative;
+    left: 12.5%;
+    margin-top: 50px;
+    margin-bottom: 25%;
+    border-radius: 1rem;
+
+}
+
+#mainpara p {
+    font-size: 4vmin;
+    background-color: white;
+    margin: 20px;
 }
 
 .ratingbutton {
@@ -32,9 +50,30 @@ footer {
     border-radius: 0.25rem;
     border-color: DarkGrey;
     background-color: #f0f0f0;
-    position: relative;
-    bottom: 9px;
     transition: background-color 0.15s ease-in-out;
+    margin-bottom: 10px;
+    left: 50px;
+}
+
+.ratings {
+    background-color: white;
+    border-radius: 1rem;
+    margin-bottom: 100px;
+    position: relative;
+    width: 290px;
+    left: calc(50% - 145px);
+}
+
+.ratings p {
+    border-radius: 1rem;
+    text-align: center;
+    margin: 10px;
+    background-color: white;
+}
+
+.ratebuttons {
+    position: relative;
+    left: calc(50% - 137px);
 }
 
 .responseAlert {
@@ -50,6 +89,7 @@ footer {
     font-weight: bold;
     margin-right: 70px;
     text-align: left;
+
 }
 
 .homepage-navbar {
@@ -73,12 +113,10 @@ footer {
 
 .responselink:hover {
     color:#155724;
-
 }
 
 .nav-item {
     font-size: 20px;
-
 }
 
 .promo-image {
@@ -107,4 +145,16 @@ footer {
     border: 1px solid;
     border-color: DarkGrey;
     border-radius: 0.5rem;
+}
+
+.partyparrot .partydude{
+    width: 10%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 80px;
+    left: 50%;
+}
+
+.mousetext {
+    width: 100px;
 }
