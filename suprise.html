@@ -58,9 +58,10 @@
                         }
 
                         // This updates the directional velocity of Mr. Parrot
-                        xVel = (5 - (Math.abs(birdX - mouseX) / 100)) * xDir;
-                        yVel = (5 - (Math.abs(birdY - mouseY) / 100)) * yDir;
-                    }
+
+                        xVel = (5 - Math.abs(birdX - mouseX) / 80) * xDir
+                        yVel = (5 - Math.abs(birdY - mouseY) / 80) * yDir
+                        }
 
                     // This loops when the mouse moves even if the mouse isnt withen 500px of the bird
                     // This updates the position of the bird with the velocities
@@ -131,6 +132,7 @@
             <h4>He only moves when your mouse moves, but get too close and he'll book it in the other direction.<br>
             The closer you get, the faster he runs!<br>
             All you have to do is click him and he'll send you back to the homepage.</h4>
+            <p>(this only works on computers)</p>
         </div>
         <p id="mousetext" style="position: relative; top: 200px"></p>
     </body>
